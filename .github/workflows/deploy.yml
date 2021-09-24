@@ -32,7 +32,7 @@ jobs:
     - id: deploy-code
       name: Deploy Code
       run: |
-        docker-compose up --build -d
+        echo "use what ever deployment method you can use"
       env:
         DB_USERNAME:  ${{ secrets.DB_USERNAME }}
         DB_PASSWORD:  ${{ secrets.DB_PASSWORD }}
