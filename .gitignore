@@ -1,5 +1,7 @@
 .env
 envsetup.sh
+mongo-init.js
+
 __pycache__
 __pycache__/
 **/venv/
