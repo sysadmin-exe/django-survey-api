@@ -5,3 +5,4 @@
 export DB_USERNAME=""
 export DB_PASSWORD=""
 export DB_NAME=""
+export SECRET_KEY=""
