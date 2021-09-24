@@ -19,7 +19,7 @@ Database secrets have been set variables gotten from environment variables in bo
 * In order to run the tests for the application locally run ```python3 manage.py test```. This is also included in the docker build step to ensure only code that passed tests is built.
 
 ## DEPLOY SOLUTION
-Before you deploy, kindly fill in the generic details in ```mongo-init.js``` and ```envsetup.sh``` to have the database details that you want.
+Before you deploy, kindly create and fill in the generic details in ```mongo-init.js``` and ```envsetup.sh``` to have the database details that you want to use from the "copy" format placeholder files. 
 
 ### Using Docker Compose
 * This solution is deployed using Docker compose. The Docker compose setup includes 2 separate containers which are Mongo DB container and Survey API container.
