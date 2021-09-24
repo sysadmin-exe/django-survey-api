@@ -32,12 +32,12 @@ services:
       - survey-api
       - survey-db
     environment:
-      DB_USERNAME:  ${{ secrets.DB_USERNAME }}
-      DB_PASSWORD:  ${{ secrets.DB_PASSWORD }}
-      DB_NAME:  ${{ secrets.DB_NAME }}
-      SECRET_KEY: ${{ secrets.SECRET_KEY }}
-      DB_CLIENT_HOST: ${{ secrets.DB_CLIENT_HOST }}
-      
+      DB_USERNAME:  ${DB_USERNAME}
+      DB_PASSWORD:  ${DB_PASSWORD}
+      DB_NAME:  ${DB_NAME}
+      SECRET_KEY: ${SECRET_KEY}
+      DB_CLIENT_HOST: ${DB_CLIENT_HOST}
+
 volumes:
   db-data:
   api-data: 
