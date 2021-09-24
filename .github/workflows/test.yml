@@ -16,7 +16,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
     
-    # Python Build Validation for the DAGs 
+    # Tests
     - id: run-dags-with-python
       name: Python Tests
       run: |
@@ -26,11 +26,3 @@ jobs:
         DB_USERNAME:  ${{ secrets.DB_USERNAME }}
         DB_PASSWORD:  ${{ secrets.DB_PASSWORD }}
         DB_NAME:  ${{ secrets.DB_NAME }}
-
-    # Run the test on the GCS folder that has the DAGs
-    - id: qa-validate-dags
-      name: Validate DAGs
-      run: |
-        gcloud composer environments run wizelake-composer-test --location ${{ secrets.GCP_REGION }} --project ${{ secrets.GCP_PROJECT_ID }}  list_dags -- -sd /home/airflow/gcs/data/test | tail -n +2
-        pip install -r requirements.txt --user
-        pytest validate_dags.py

@@ -4,7 +4,7 @@ on:
   push:
     branches:
     - main
-
+    
 jobs:
   Test-And-Deploy:
     name: Test and Deploy
@@ -16,7 +16,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
     
-    # Python Build Validation for the DAGs 
+    # Tests 
     - id: run-dags-with-python
       name: Python Tests
       run: |
@@ -27,8 +27,12 @@ jobs:
         DB_PASSWORD:  ${{ secrets.DB_PASSWORD }}
         DB_NAME:  ${{ secrets.DB_NAME }}
 
-    # Run the test on the GCS folder that has the DAGs
+    # Deploy
     - id: deploy-code
       name: Deploy Code
       run: |
         docker-compose up --build -d
+      env:
+        DB_USERNAME:  ${{ secrets.DB_USERNAME }}
+        DB_PASSWORD:  ${{ secrets.DB_PASSWORD }}
+        DB_NAME:  ${{ secrets.DB_NAME }}
