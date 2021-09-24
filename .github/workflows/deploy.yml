@@ -17,7 +17,7 @@ jobs:
       uses: actions/checkout@master
     
     # Tests 
-    - id: run-dags-with-python
+    - id: Test code
       name: Python Tests
       run: |
         pip3 install -r requirements.txt
