@@ -1,0 +1,8 @@
+django
+djangorestframework
+djongo
+django-cors-headers
+psycopg2
+sqlparse==0.2.4
+dnspython
+django-environ
