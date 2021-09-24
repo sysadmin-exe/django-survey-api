@@ -26,7 +26,8 @@ jobs:
         DB_USERNAME:  ${{ secrets.DB_USERNAME }}
         DB_PASSWORD:  ${{ secrets.DB_PASSWORD }}
         DB_NAME:  ${{ secrets.DB_NAME }}
-
+        SECRET_KEY: ${{SECRET_KEY}}
+        DB_CLIENT_HOST: ${{DB_CLIENT_HOST}}
     # Deploy
     - id: deploy-code
       name: Deploy Code
@@ -36,3 +37,5 @@ jobs:
         DB_USERNAME:  ${{ secrets.DB_USERNAME }}
         DB_PASSWORD:  ${{ secrets.DB_PASSWORD }}
         DB_NAME:  ${{ secrets.DB_NAME }}
+        SECRET_KEY: ${{SECRET_KEY}}
+        DB_CLIENT_HOST: ${{DB_CLIENT_HOST}}
