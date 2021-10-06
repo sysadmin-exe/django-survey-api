@@ -43,13 +43,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework', #django restframework
     'api.apps.ApiConfig', #survey api
-    'corsheaders' #CORS
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware', #CORS Middleware
     'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
